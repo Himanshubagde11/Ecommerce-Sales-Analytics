@@ -1,0 +1,21 @@
+Metric,Value,Status,Description
+Customer Volume,"100,000",PASS,"Target: >= 100,000 customers"
+Product Catalog Volume,"2,000",PASS,"Target: >= 2,000 products"
+Order Header Volume,"500,000",PASS,"Target: >= 500,000 orders"
+Order-Line Volume,"2,099,963",PASS,"Target: >= 2,000,000 sales lines"
+Returns Volume,"272,950",PASS,Realistic return transactions present
+Customer PK Uniqueness,100%,PASS,CustomerID must be strictly unique
+Product PK Uniqueness,100%,PASS,ProductID must be strictly unique
+Order PK Uniqueness,100%,PASS,OrderID must be strictly unique
+Sales PK Uniqueness,100%,PASS,SalesID must be strictly unique
+Returns PK Uniqueness,100%,PASS,ReturnID must be strictly unique
+FK: Orders -> Customers,0 orphans,PASS,Zero orphaned orders allowed
+FK: Sales -> Orders,0 orphans,PASS,Zero orphaned sales order links
+FK: Sales -> Products,0 orphans,PASS,Zero orphaned sales product links
+FK: Returns -> Orders,0 orphans,PASS,Zero orphaned returns order links
+Math: SalesAmount Reconciliation,Max diff $0.0000,PASS,SalesAmount = Qty * Price - Discount
+Math: ProfitAmount Reconciliation,Max diff $0.0000,PASS,ProfitAmount = SalesAmount - CostAmount
+Math: Order Total Reconciliation,Max diff $0.0000,PASS,Order.TotalAmount = SUM(Sales.SalesAmount)
+Business: Positive Pricing,0 violations,PASS,Unit cost and price must be strictly positive
+Business: Positive Quantities,0 violations,PASS,Quantity sold must be positive
+Business: Return Rate Check,13.00%,PASS,Overall line-item return rate within retail benchmark

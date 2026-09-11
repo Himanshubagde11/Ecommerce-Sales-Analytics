@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["dw DimCategory","dw DimCustomer","dw DimDate","dw DimLocation","dw DimPayment","dw DimProduct","dw FactReturns","dw FactSales"]
+
+ref table 'dw DimCategory'
+ref table 'dw DimCustomer'
+ref table 'dw DimDate'
+ref table 'dw DimLocation'
+ref table 'dw DimPayment'
+ref table 'dw DimProduct'
+ref table 'dw FactReturns'
+ref table 'dw FactSales'
+ref table _Measures
+
+ref cultureInfo en-US
+

@@ -1,0 +1,141 @@
+table 'dw DimDate'
+	lineageTag: 02d196a6-a083-45f4-a988-de2de9683a61
+	dataCategory: Time
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6af9308b-ea25-4148-98e6-75e645b4a979
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullDate
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 3c09566a-9445-4fa6-a2f5-6413ea6e76b1
+		summarizeBy: none
+		sourceColumn: FullDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d107f23e-622b-47fb-85ca-2217410911c8
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bcacc1d-90e6-40bd-aaf2-c994fd6abcbf
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterName
+		dataType: string
+		lineageTag: c4dc2f23-8f06-42b9-ab4b-3cd469ce2358
+		summarizeBy: none
+		sourceColumn: QuarterName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: c317074b-7d5d-49bd-bf23-574c5cba3993
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 39c2957d-e076-4649-9416-a7f7c1b077c8
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: a9046446-0c49-4544-98e1-739a1c5aefba
+		summarizeBy: sum
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: a2aaf60c-bd60-4a66-b96b-155ce677eaf9
+		summarizeBy: sum
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 1401cb72-27ab-40b6-8022-b7e92c0e65c2
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d03231cc-2eed-4863-a1a9-4cd66a850f9f
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHolidaySeason
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9e5ca3c1-9cca-4fa3-9303-390ae61446e5
+		summarizeBy: none
+		sourceColumn: IsHolidaySeason
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 8accf7e0-ecc6-42b6-8bb9-250912e745f3
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarter
+		dataType: string
+		lineageTag: b8a6daeb-75bb-4baf-9594-9ba1530c1c8a
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw DimDate' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "DimDate"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

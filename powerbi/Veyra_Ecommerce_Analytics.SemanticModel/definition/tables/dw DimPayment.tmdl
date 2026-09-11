@@ -1,0 +1,31 @@
+table 'dw DimPayment'
+	lineageTag: 4744f932-0f2c-47f4-9943-2a4b540ce86e
+
+	column PaymentKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fb492d36-8ded-4544-876e-b5105888cadf
+		summarizeBy: none
+		sourceColumn: PaymentKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentMethod
+		dataType: string
+		lineageTag: 87de0548-9df9-4e65-88f2-46973b9b4753
+		summarizeBy: none
+		sourceColumn: PaymentMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw DimPayment' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "DimPayment"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

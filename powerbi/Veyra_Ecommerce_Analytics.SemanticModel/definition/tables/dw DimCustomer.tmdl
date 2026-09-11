@@ -1,0 +1,127 @@
+table 'dw DimCustomer'
+	lineageTag: 89d75699-e26d-4d54-a4a4-f5d997e26ef6
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c07154e-cb1b-49f6-8195-542722031d32
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 02c5838a-a6af-4b7b-8135-90b837b3297c
+		summarizeBy: count
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 0fab8eac-238b-4763-ad29-277675431d3f
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: a3c1cd8a-6a9f-4ef6-90a9-566812453a32
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: c93fee0f-649c-4387-a647-0826ad73597a
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column SignupDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5c166e44-da41-4eef-82ac-ade88dec538d
+		summarizeBy: none
+		sourceColumn: SignupDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Email
+		dataType: string
+		lineageTag: 562b6d8a-d1a8-4a36-993d-51046ba4531b
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 4003f8f0-6fb4-4734-924d-839bac90555c
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 62176a50-3403-47a1-bfd0-7455776b0f30
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: aef309a5-c899-4907-b7e2-9e2f657067f3
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 10586211-2fb2-4ab9-a792-c9ac2e49beb6
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcquisitionChannel
+		dataType: string
+		lineageTag: 8cfaaf35-d6de-4d8b-b1f2-53f8d43262be
+		summarizeBy: none
+		sourceColumn: AcquisitionChannel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b9d83f3f-a55d-4e64-b589-947bd26afbac
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw DimCustomer' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "DimCustomer"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

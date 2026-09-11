@@ -1,0 +1,107 @@
+table 'dw DimProduct'
+	lineageTag: b6c034f0-1636-427b-aa48-c7d70c5f5c53
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c47d25d9-1b08-4273-842b-b80e3d1be4f5
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e837815-522f-46e8-a03b-ae0b178dd88b
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 3714b31c-8e29-4041-bb14-2c4374157b98
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: 38ca6682-0cd0-4dc0-b3f9-6efc5625b596
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e4386c8-fbb1-40a2-a918-0413f03ae064
+		summarizeBy: none
+		sourceColumn: CategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryName
+		dataType: string
+		lineageTag: ecbd9f6f-4ad2-4000-a53b-61c7ad81f9f3
+		summarizeBy: none
+		sourceColumn: CategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: double
+		lineageTag: 45f57bc2-481b-452c-bcd1-181d589306dc
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 81286ebd-25b5-4bf4-ab8a-9cac672cdd10
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductLaunchDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 433d310c-b521-42d8-8379-6ed2fa6f8a0d
+		summarizeBy: none
+		sourceColumn: ProductLaunchDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3be75baf-81b5-4448-b622-88cea111f385
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw DimProduct' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "DimProduct"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

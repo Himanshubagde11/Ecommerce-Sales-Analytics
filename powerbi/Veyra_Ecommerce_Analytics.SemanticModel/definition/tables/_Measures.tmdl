@@ -1,0 +1,134 @@
+table _Measures
+
+	measure 'Total Revenue' = VAR Result = SUM('dw FactSales'[SalesAmount]) RETURN COALESCE(Result, 0)
+		formatString: \$#,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Total Profit' = VAR Result = SUM('dw FactSales'[ProfitAmount]) RETURN COALESCE(Result, 0)
+		formatString: \$#,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Total Cost' = VAR Result = SUM('dw FactSales'[CostAmount]) RETURN COALESCE(Result, 0)
+		formatString: \$#,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Profit Margin' = VAR Revenue = [Total Revenue] VAR Profit = [Total Profit] VAR Result = DIVIDE(Profit, Revenue, 0) RETURN Result
+		formatString: 0.0%
+		displayFolder: 1. Financial & Sales
+
+	measure 'Total Orders' = VAR Result = DISTINCTCOUNT('dw FactSales'[OrderID]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Total Quantity' = VAR Result = SUM('dw FactSales'[Quantity]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Average Order Value' = VAR Revenue = [Total Revenue] VAR Orders = [Total Orders] VAR Result = DIVIDE(Revenue, Orders, 0) RETURN Result
+		formatString: \$#,0.00
+		displayFolder: 1. Financial & Sales
+
+	measure 'Total Discounts' = VAR Result = SUM('dw FactSales'[DiscountAmount]) RETURN COALESCE(Result, 0)
+		formatString: \$#,0
+		displayFolder: 1. Financial & Sales
+
+	measure 'Discount Rate %' = VAR TotalDisc = [Total Discounts] VAR GrossRev = [Total Revenue] + TotalDisc VAR Result = DIVIDE(TotalDisc, GrossRev, 0) RETURN Result
+		formatString: 0.0%
+		displayFolder: 1. Financial & Sales
+
+	measure 'Prior Month Revenue' = VAR Result = CALCULATE([Total Revenue], DATEADD('dw DimDate'[FullDate], -1, MONTH)) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'MoM Revenue %' = VAR CurrentRevenue = [Total Revenue] VAR PriorRevenue = [Prior Month Revenue] VAR Result = DIVIDE(CurrentRevenue - PriorRevenue, PriorRevenue, 0) RETURN Result
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Time Intelligence
+
+	measure 'Prior Year Revenue' = VAR Result = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('dw DimDate'[FullDate])) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'YoY Revenue %' = VAR CurrentRevenue = [Total Revenue] VAR PriorRevenue = [Prior Year Revenue] VAR Result = DIVIDE(CurrentRevenue - PriorRevenue, PriorRevenue, 0) RETURN Result
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Time Intelligence
+
+	measure 'YTD Revenue' = VAR Result = TOTALYTD([Total Revenue], 'dw DimDate'[FullDate]) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'YTD Profit' = VAR Result = TOTALYTD([Total Profit], 'dw DimDate'[FullDate]) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'Rolling 3M Revenue' = VAR Result = CALCULATE([Total Revenue], DATESINPERIOD('dw DimDate'[FullDate], MAX('dw DimDate'[FullDate]), -3, MONTH)) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'Rolling 12M Revenue' = VAR Result = CALCULATE([Total Revenue], DATESINPERIOD('dw DimDate'[FullDate], MAX('dw DimDate'[FullDate]), -12, MONTH)) RETURN Result
+		formatString: \$#,0
+		displayFolder: 2. Time Intelligence
+
+	measure 'Total Customers' = VAR Result = DISTINCTCOUNT('dw DimCustomer'[CustomerKey]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 3. Customer & Retention
+
+	measure 'Active Purchasing Customers' = VAR Result = CALCULATE(DISTINCTCOUNT('dw FactSales'[CustomerKey]), 'dw FactSales'[SalesAmount] > 0) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 3. Customer & Retention
+
+	measure 'Repeat Customers' = VAR Result = COUNTROWS(FILTER(VALUES('dw DimCustomer'[CustomerKey]), CALCULATE(DISTINCTCOUNT('dw FactSales'[OrderID])) > 1)) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 3. Customer & Retention
+
+	measure 'One-Time Buyers' = VAR Result = COUNTROWS(FILTER(VALUES('dw DimCustomer'[CustomerKey]), CALCULATE(DISTINCTCOUNT('dw FactSales'[OrderID])) = 1)) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 3. Customer & Retention
+
+	measure 'Repeat Customer Rate' = VAR RepeatCust = [Repeat Customers] VAR TotalActive = [Active Purchasing Customers] VAR Result = DIVIDE(RepeatCust, TotalActive, 0) RETURN Result
+		formatString: 0.0%
+		displayFolder: 3. Customer & Retention
+
+	measure 'Average Revenue Per Customer' = VAR Revenue = [Total Revenue] VAR Customers = [Active Purchasing Customers] VAR Result = DIVIDE(Revenue, Customers, 0) RETURN Result
+		formatString: \$#,0.00
+		displayFolder: 3. Customer & Retention
+
+	measure 'Estimated CLV' = VAR AvgAOV = [Average Order Value] VAR CustOrders = [Total Orders] VAR MarginRate = [Profit Margin] VAR ActiveCust = [Active Purchasing Customers] VAR AnnualOrdersPerCust = DIVIDE(CustOrders, ActiveCust * 4, 0) VAR FutureHorizonMultiplier = 2.125 VAR ProjectedMargin = AnnualOrdersPerCust * AvgAOV * MarginRate * FutureHorizonMultiplier VAR HistoricalProfitPerCust = DIVIDE([Total Profit], ActiveCust, 0) RETURN HistoricalProfitPerCust + ProjectedMargin
+		formatString: \$#,0.00
+		displayFolder: 3. Customer & Retention
+
+	measure 'Active Catalog Products' = VAR Result = DISTINCTCOUNT('dw DimProduct'[ProductKey]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 4. Products & Merchandising
+
+	measure 'Average Selling Price' = VAR Result = DIVIDE([Total Revenue], [Total Quantity], 0) RETURN Result
+		formatString: \$#,0.00
+		displayFolder: 4. Products & Merchandising
+
+	measure 'Average Unit Cost' = VAR Result = DIVIDE([Total Cost], [Total Quantity], 0) RETURN Result
+		formatString: \$#,0.00
+		displayFolder: 4. Products & Merchandising
+
+	measure 'Total Returned Items' = VAR Result = SUM('dw FactReturns'[QuantityReturned]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 5. Returns & Quality
+
+	measure 'Total Return Amount' = VAR Result = SUM('dw FactReturns'[ReturnAmount]) RETURN COALESCE(Result, 0)
+		formatString: \$#,0
+		displayFolder: 5. Returns & Quality
+
+	measure 'Total Return Incidents' = VAR Result = DISTINCTCOUNT('dw FactReturns'[ReturnID]) RETURN COALESCE(Result, 0)
+		formatString: #,0
+		displayFolder: 5. Returns & Quality
+
+	measure 'Return Rate' = VAR ReturnedUnits = [Total Returned Items] VAR TotalUnits = [Total Quantity] VAR Result = DIVIDE(ReturnedUnits, TotalUnits, 0) RETURN Result
+		formatString: 0.0%
+		displayFolder: 5. Returns & Quality
+
+	column Description
+		dataType: string
+		isHidden
+		sourceColumn: [Description]
+
+	partition '_Measures Partition' = calculated
+		source = ROW("Description", "Veyra E-Commerce KPI Measures Container")
+

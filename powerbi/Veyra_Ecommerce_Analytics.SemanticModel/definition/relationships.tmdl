@@ -1,0 +1,54 @@
+relationship caaf376b-42a5-403f-b70b-4074faf1a8c2
+	fromColumn: 'dw DimProduct'.CategoryID
+	toColumn: 'dw DimCategory'.CategoryID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 094a1f26-acad-446b-b858-8b8e267643d5
+	fromColumn: 'dw FactReturns'.CustomerKey
+	toColumn: 'dw DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 57e74d12-881c-44fc-896e-bd2aa97e4be6
+	fromColumn: 'dw FactReturns'.ReturnDateKey
+	toColumn: 'dw DimDate'.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 17488069-2511-4fc8-b966-bdf6651696ea
+	fromColumn: 'dw FactReturns'.ProductKey
+	toColumn: 'dw DimProduct'.ProductKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship f1ff92ae-0bdd-4569-b5fa-f3646453f600
+	fromColumn: 'dw FactSales'.CustomerKey
+	toColumn: 'dw DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1f58f8ae-91d1-416a-a892-5b99cb9ae71f
+	fromColumn: 'dw FactSales'.OrderDateKey
+	toColumn: 'dw DimDate'.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4ab6d315-0285-411f-88a4-4737c6807207
+	fromColumn: 'dw FactSales'.LocationKey
+	toColumn: 'dw DimLocation'.LocationKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship b1681ebb-a601-4d98-b9b6-20a80dd5a6ee
+	fromColumn: 'dw FactSales'.PaymentKey
+	toColumn: 'dw DimPayment'.PaymentKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1d1b70df-add3-47c9-8aca-c602e15f0f4e
+	fromColumn: 'dw FactSales'.ProductKey
+	toColumn: 'dw DimProduct'.ProductKey
+
+	annotation PBI_IsFromSource = FS
+

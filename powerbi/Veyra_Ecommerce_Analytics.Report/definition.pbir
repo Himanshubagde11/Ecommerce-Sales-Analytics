@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Veyra_Ecommerce_Analytics.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

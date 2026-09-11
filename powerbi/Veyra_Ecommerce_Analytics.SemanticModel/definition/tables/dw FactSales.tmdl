@@ -1,0 +1,171 @@
+table 'dw FactSales'
+	lineageTag: 87d9bae7-0caf-44b5-aeee-fe1590b2094b
+
+	column SalesKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d4ca8928-a358-4d6b-befd-2b7ce1f73ec1
+		summarizeBy: count
+		sourceColumn: SalesKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesID
+		dataType: int64
+		formatString: 0
+		lineageTag: d16678d5-87e7-404b-838b-6d043674d917
+		summarizeBy: count
+		sourceColumn: SalesID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: ad5ec68d-e0d9-4640-a912-82889165d545
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b9c00f2-7639-46de-bded-3b605497def4
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1825e9e0-9541-41b7-81fe-9b746fb95575
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9654cddc-6014-43e1-9501-00b3b5bfb989
+		summarizeBy: none
+		sourceColumn: OrderDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b46f73a-ce52-414f-bb5a-db31a469f34a
+		summarizeBy: none
+		sourceColumn: LocationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f78440cf-68d4-4492-8007-20bbef755b00
+		summarizeBy: none
+		sourceColumn: PaymentKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderStatus
+		dataType: string
+		lineageTag: 6ec52081-3493-4665-9154-02b85b4cdbbb
+		summarizeBy: none
+		sourceColumn: OrderStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShippingMethod
+		dataType: string
+		lineageTag: 45467ef8-1730-49da-a3c7-06268e68553b
+		summarizeBy: none
+		sourceColumn: ShippingMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 242da448-9c00-4327-a434-6c18ff251fc5
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 356dc2e4-26af-4f94-b755-751e1fec88a1
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiscountAmount
+		dataType: double
+		lineageTag: f2159fe3-efed-4d78-8b87-5d38c073efe4
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalesAmount
+		dataType: double
+		lineageTag: 2b4894e3-40a1-4769-9d36-1c0a1ec53e78
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CostAmount
+		dataType: double
+		lineageTag: 2845e8e7-58fd-4f5a-9f22-40105edaf667
+		summarizeBy: sum
+		sourceColumn: CostAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProfitAmount
+		dataType: double
+		lineageTag: 642516a8-7240-4216-9b50-692755960cfa
+		summarizeBy: sum
+		sourceColumn: ProfitAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ca10bc8-cc66-4b1b-8fdb-607230bdda02
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw FactSales' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "FactSales"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

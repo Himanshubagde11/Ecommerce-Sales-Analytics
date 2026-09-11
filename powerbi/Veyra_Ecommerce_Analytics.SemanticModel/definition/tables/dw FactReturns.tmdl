@@ -1,0 +1,105 @@
+table 'dw FactReturns'
+	lineageTag: 72cd5194-1e92-4cc4-93a7-563050cde6ca
+
+	column ReturnKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a90c3ace-3df5-4c59-a36f-4684caac93d5
+		summarizeBy: count
+		sourceColumn: ReturnKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnID
+		dataType: int64
+		formatString: 0
+		lineageTag: be62e579-969b-47b2-925c-d4f23026b015
+		summarizeBy: count
+		sourceColumn: ReturnID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 91ebf801-3e17-4060-b139-505d0cbf1cd4
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a567ab2c-0cf2-4507-8cec-7f7acf63b41d
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b7434c7-7f01-4b9f-ad17-a0949e857635
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d8efdaa-3e67-4401-868a-d6399c4433ab
+		summarizeBy: none
+		sourceColumn: ReturnDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuantityReturned
+		dataType: int64
+		formatString: 0
+		lineageTag: 5752c6d0-e16c-4a54-ad00-01fe7cf1fda8
+		summarizeBy: sum
+		sourceColumn: QuantityReturned
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnAmount
+		dataType: double
+		lineageTag: f6ed4871-2422-41a2-9fad-9e6766eb611c
+		summarizeBy: sum
+		sourceColumn: ReturnAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReturnReason
+		dataType: string
+		lineageTag: 747512ca-2af3-42b9-879d-52c967faffc5
+		summarizeBy: none
+		sourceColumn: ReturnReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8cc7485d-a6ba-4480-8f67-66da6445fdeb
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dw FactReturns' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("localhost", "VeyraDW"),
+				  #"Navigation 1" = Source{[Schema = "dw", Item = "FactReturns"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,2 @@
+# Raw data directory
+# Full CSV files (>100MB) are generated via python/run_pipeline.py

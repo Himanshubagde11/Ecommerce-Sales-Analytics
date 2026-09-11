@@ -1,0 +1,647 @@
+{
+  "id": 0,
+  "config": "{\"version\": \"5.50\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Veyra Executive Dark Theme\", \"reportVersionAtImport\": \"5.50\", \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"exportDataMode\": 1}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "veyra_theme",
+            "path": "StaticResources/RegisteredResources/veyra_theme.json",
+            "type": 2
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_ExecutiveOverview",
+      "displayName": "1. Executive Overview",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 90,
+          "width": 300,
+          "height": 100,
+          "config": "{\"name\": \"p1_slicer_year\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 90, \"width\": 300, \"height\": 100}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dw DimDate.Year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dw DimDate\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Year\"}, \"Name\": \"dw DimDate.Year\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter: Fiscal Year'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 340,
+          "y": 20,
+          "z": 90,
+          "width": 380,
+          "height": 100,
+          "config": "{\"name\": \"p1_slicer_cat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 340, \"y\": 20, \"z\": 90, \"width\": 380, \"height\": 100}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dw DimCategory.CategoryName\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dw DimCategory\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter: Product Category'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 740,
+          "y": 20,
+          "z": 90,
+          "width": 380,
+          "height": 100,
+          "config": "{\"name\": \"p1_slicer_reg\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 740, \"y\": 20, \"z\": 90, \"width\": 380, \"height\": 100}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dw DimLocation.Region\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dw DimLocation\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Region\"}, \"Name\": \"dw DimLocation.Region\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter: Global Region'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_rev\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Revenue'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 290,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_prof\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 290, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Profit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 560,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_margin\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 560, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Profit Margin\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Gross Margin %'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 830,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 830, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Orders'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1100,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_cust\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1100, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Customers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1370,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_aov\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1370, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Average Order Value (AOV)'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1640,
+          "y": 140,
+          "z": 100,
+          "width": 255,
+          "height": 120,
+          "config": "{\"name\": \"p1_kpi_ret\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1640, \"y\": 140, \"z\": 100, \"width\": 255, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Return Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Return Rate\"}, \"Name\": \"_Measures.Return Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Return Rate'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 280,
+          "z": 100,
+          "width": 1140,
+          "height": 380,
+          "config": "{\"name\": \"p1_combo_trend\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 280, \"z\": 100, \"width\": 1140, \"height\": 380}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimDate.MonthName\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}], \"Y2\": [{\"queryRef\": \"_Measures.Profit Margin\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimDate\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"MonthName\"}, \"Name\": \"dw DimDate.MonthName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Revenue Trend vs. Gross Margin %'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 1180,
+          "y": 280,
+          "z": 100,
+          "width": 715,
+          "height": 380,
+          "config": "{\"name\": \"p1_bar_cat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1180, \"y\": 280, \"z\": 100, \"width\": 715, \"height\": 380}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCategory.CategoryName\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue Contribution by Product Category'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 680,
+          "z": 100,
+          "width": 920,
+          "height": 370,
+          "config": "{\"name\": \"p1_donut_rfm\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 680, \"z\": 100, \"width\": 920, \"height\": 370}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimLocation.Region\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Region\"}, \"Name\": \"dw DimLocation.Region\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Distribution by Region'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 680,
+          "z": 100,
+          "width": 935,
+          "height": 370,
+          "config": "{\"name\": \"p1_tree_reg\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 680, \"z\": 100, \"width\": 935, \"height\": 370}}], \"singleVisual\": {\"visualType\": \"treemap\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimLocation.Country\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Country\"}, \"Name\": \"dw DimLocation.Country\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Regional Revenue Breakdown by Country'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_SalesPerformance",
+      "displayName": "2. Sales Performance",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p2_kpi_rev\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Revenue'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p2_kpi_prof\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Profit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p2_kpi_yoy\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.YoY Revenue %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"YoY Revenue %\"}, \"Name\": \"_Measures.YoY Revenue %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'YoY Revenue Growth %'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p2_kpi_qty\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Quantity\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Quantity\"}, \"Name\": \"_Measures.Total Quantity\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Units Sold'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p2_kpi_disc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Discounts\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Discounts\"}, \"Name\": \"_Measures.Total Discounts\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Discounts Extended'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 1140,
+          "height": 430,
+          "config": "{\"name\": \"p2_combo_yoy\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 1140, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimDate.Year\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}], \"Y2\": [{\"queryRef\": \"_Measures.Total Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimDate\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Year\"}, \"Name\": \"dw DimDate.Year\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue vs. Cost Spread over Time'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 1180,
+          "y": 150,
+          "z": 100,
+          "width": 715,
+          "height": 430,
+          "config": "{\"name\": \"p2_matrix_perf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1180, \"y\": 150, \"z\": 100, \"width\": 715, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimCategory.CategoryName\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Total Profit\"}, {\"queryRef\": \"_Measures.Profit Margin\"}, {\"queryRef\": \"_Measures.Total Quantity\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Quantity\"}, \"Name\": \"_Measures.Total Quantity\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales Performance Matrix by Category'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p2_matrix_monthly\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimDate.MonthName\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Prior Month Revenue\"}, {\"queryRef\": \"_Measures.MoM Revenue %\"}, {\"queryRef\": \"_Measures.Prior Year Revenue\"}, {\"queryRef\": \"_Measures.YoY Revenue %\"}, {\"queryRef\": \"_Measures.YTD Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimDate\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"MonthName\"}, \"Name\": \"dw DimDate.MonthName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Prior Month Revenue\"}, \"Name\": \"_Measures.Prior Month Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MoM Revenue %\"}, \"Name\": \"_Measures.MoM Revenue %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Prior Year Revenue\"}, \"Name\": \"_Measures.Prior Year Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"YoY Revenue %\"}, \"Name\": \"_Measures.YoY Revenue %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"YTD Revenue\"}, \"Name\": \"_Measures.YTD Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Financial Audit Grid'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_CustomerAnalytics",
+      "displayName": "3. Customer Analytics",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p3_kpi_tot\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Customers\"}, \"Name\": \"_Measures.Total Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Customers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p3_kpi_act\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Buyers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p3_kpi_rep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Repeat Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customers\"}, \"Name\": \"_Measures.Repeat Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Repeat Customers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p3_kpi_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Repeat Customer Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customer Rate\"}, \"Name\": \"_Measures.Repeat Customer Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Repeat Customer Rate %'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p3_kpi_arpu\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Revenue Per Customer\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Revenue Per Customer\"}, \"Name\": \"_Measures.Average Revenue Per Customer\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ARPU'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 920,
+          "height": 430,
+          "config": "{\"name\": \"p3_bar_channel\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 920, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCustomer.AcquisitionChannel\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Customers by Acquisition Channel'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 150,
+          "z": 100,
+          "width": 935,
+          "height": 430,
+          "config": "{\"name\": \"p3_donut_gender\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 150, \"z\": 100, \"width\": 935, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCustomer.Gender\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Gender\"}, \"Name\": \"dw DimCustomer.Gender\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue by Customer Gender'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p3_table_geo\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimLocation.Country\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}, {\"queryRef\": \"_Measures.Total Orders\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"Country\"}, \"Name\": \"dw DimLocation.Country\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Geographic Penetration & AOV'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_CustomerSegmentation",
+      "displayName": "4. Customer Segmentation",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p4_kpi_act\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Segmented'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p4_kpi_rep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Repeat Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customers\"}, \"Name\": \"_Measures.Repeat Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Repeat Champions'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p4_kpi_aov\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Segment AOV'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p4_kpi_arpu\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Revenue Per Customer\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Revenue Per Customer\"}, \"Name\": \"_Measures.Average Revenue Per Customer\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Average Spend'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p4_kpi_clv\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Estimated CLV\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Estimated CLV\"}, \"Name\": \"_Measures.Estimated CLV\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Estimated CLV'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 920,
+          "height": 430,
+          "config": "{\"name\": \"p4_tree_channel\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 920, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"treemap\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCustomer.AcquisitionChannel\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Value Contribution by Channel'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 150,
+          "z": 100,
+          "width": 935,
+          "height": 430,
+          "config": "{\"name\": \"p4_bar_region\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 150, \"z\": 100, \"width\": 935, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimLocation.Region\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Region\"}, \"Name\": \"dw DimLocation.Region\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Density by Global Region'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p4_matrix_profiles\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimCustomer.AcquisitionChannel\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}, {\"queryRef\": \"_Measures.Total Orders\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Average Order Value\"}, {\"queryRef\": \"_Measures.Repeat Customer Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customer Rate\"}, \"Name\": \"_Measures.Repeat Customer Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel Loyalty & Average Spend Matrix'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_ProductAnalytics",
+      "displayName": "5. Product Analytics",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p5_kpi_prods\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Catalog Products\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Catalog Products\"}, \"Name\": \"_Measures.Active Catalog Products\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Catalog SKUs'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p5_kpi_asp\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Selling Price\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Selling Price\"}, \"Name\": \"_Measures.Average Selling Price\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Average Selling Price'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p5_kpi_cost\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Unit Cost\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Unit Cost\"}, \"Name\": \"_Measures.Average Unit Cost\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Average Unit Cost'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p5_kpi_margin\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Profit Margin\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Catalog Profit Margin'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p5_kpi_ret\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Return Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Return Rate\"}, \"Name\": \"_Measures.Return Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Product Return Rate'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 920,
+          "height": 430,
+          "config": "{\"name\": \"p5_bar_cat_margin\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 920, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCategory.CategoryName\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Profit Margin\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Profit Margin % by Category'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 150,
+          "z": 100,
+          "width": 935,
+          "height": 430,
+          "config": "{\"name\": \"p5_donut_cat_units\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 150, \"z\": 100, \"width\": 935, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCategory.CategoryName\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Quantity\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Quantity\"}, \"Name\": \"_Measures.Total Quantity\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Unit Sales Share by Category'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p5_table_top_products\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dw DimProduct.ProductID\"}, {\"queryRef\": \"dw DimProduct.ProductName\"}, {\"queryRef\": \"dw DimProduct.Brand\"}, {\"queryRef\": \"dw DimCategory.CategoryName\"}, {\"queryRef\": \"_Measures.Total Quantity\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Total Profit\"}, {\"queryRef\": \"_Measures.Profit Margin\"}, {\"queryRef\": \"_Measures.Return Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"src_0\", \"Entity\": \"dw DimProduct\", \"Type\": 0}, {\"Name\": \"src_1\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"src_2\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"ProductID\"}, \"Name\": \"dw DimProduct.ProductID\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"ProductName\"}, \"Name\": \"dw DimProduct.ProductName\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Brand\"}, \"Name\": \"dw DimProduct.Brand\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_1\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"Total Quantity\"}, \"Name\": \"_Measures.Total Quantity\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"Return Rate\"}, \"Name\": \"_Measures.Return Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Product Catalog Commercial Audit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_ChurnRetention",
+      "displayName": "6. Churn & Retention",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p6_kpi_act\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Base'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p6_kpi_rep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Repeat Customers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customers\"}, \"Name\": \"_Measures.Repeat Customers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Retained Buyers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p6_kpi_onetime\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.One-Time Buyers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"One-Time Buyers\"}, \"Name\": \"_Measures.One-Time Buyers\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'One-Time Buyers'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p6_kpi_rep_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Repeat Customer Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customer Rate\"}, \"Name\": \"_Measures.Repeat Customer Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Retention Rate %'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p6_kpi_ret_items\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Returned Items\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Returned Items\"}, \"Name\": \"_Measures.Total Returned Items\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Returned Units'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 920,
+          "height": 430,
+          "config": "{\"name\": \"p6_donut_retention\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 920, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimCustomer.AcquisitionChannel\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Repeat vs One-Time Customer Revenue'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 150,
+          "z": 100,
+          "width": 935,
+          "height": 430,
+          "config": "{\"name\": \"p6_bar_ret_reason\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 150, \"z\": 100, \"width\": 935, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw FactReturns.ReturnReason\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Returned Items\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw FactReturns\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"ReturnReason\"}, \"Name\": \"dw FactReturns.ReturnReason\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Returned Items\"}, \"Name\": \"_Measures.Total Returned Items\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Returns by Reason'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p6_matrix_retention\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimCustomer.AcquisitionChannel\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Active Purchasing Customers\"}, {\"queryRef\": \"_Measures.Repeat Customers\"}, {\"queryRef\": \"_Measures.Repeat Customer Rate\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Total Returned Items\"}, {\"queryRef\": \"_Measures.Return Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Purchasing Customers\"}, \"Name\": \"_Measures.Active Purchasing Customers\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customers\"}, \"Name\": \"_Measures.Repeat Customers\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Repeat Customer Rate\"}, \"Name\": \"_Measures.Repeat Customer Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Returned Items\"}, \"Name\": \"_Measures.Total Returned Items\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Return Rate\"}, \"Name\": \"_Measures.Return Rate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel Retention & Customer Equity Audit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_RegionalAnalytics",
+      "displayName": "7. Regional Analytics",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p7_kpi_rev\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Global Revenue'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p7_kpi_profit\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Global Profit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p7_kpi_margin\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Profit Margin\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Average Regional Margin'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p7_kpi_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Total International Orders'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p7_kpi_aov\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Global AOV'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 920,
+          "height": 430,
+          "config": "{\"name\": \"p7_bar_region_rev\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 920, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimLocation.Region\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Region\"}, \"Name\": \"dw DimLocation.Region\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue by Global Continental Region'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 960,
+          "y": 150,
+          "z": 100,
+          "width": 935,
+          "height": 430,
+          "config": "{\"name\": \"p7_tree_country\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 150, \"z\": 100, \"width\": 935, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"treemap\", \"projections\": {\"Category\": [{\"queryRef\": \"dw DimLocation.Country\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Country\"}, \"Name\": \"dw DimLocation.Country\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Country Revenue Distribution'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 600,
+          "z": 100,
+          "width": 1875,
+          "height": 450,
+          "config": "{\"name\": \"p7_matrix_geo_hierarchy\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 600, \"z\": 100, \"width\": 1875, \"height\": 450}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": [{\"queryRef\": \"dw DimLocation.City\", \"active\": true}], \"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Total Profit\"}, {\"queryRef\": \"_Measures.Profit Margin\"}, {\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dw DimLocation\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"City\"}, \"Name\": \"dw DimLocation.City\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Profit Margin\"}, \"Name\": \"_Measures.Profit Margin\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Geographic Performance Hierarchy (Region -> Country -> City)'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "Section_Customer360DrillThrough",
+      "displayName": "8. Customer 360 Drill-Through",
+      "height": 1080,
+      "width": 1920,
+      "displayOption": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p8_kpi_cust_rev\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Lifetime Revenue'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p8_kpi_cust_prof\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Profit\"}, \"Name\": \"_Measures.Total Profit\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Lifetime Profit'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p8_kpi_cust_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Lifetime Orders Placed'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1160,
+          "y": 20,
+          "z": 100,
+          "width": 360,
+          "height": 110,
+          "config": "{\"name\": \"p8_kpi_cust_aov\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1160, \"y\": 20, \"z\": 100, \"width\": 360, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Average Order Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Average Order Value\"}, \"Name\": \"_Measures.Average Order Value\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer AOV'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 1540,
+          "y": 20,
+          "z": 100,
+          "width": 355,
+          "height": 110,
+          "config": "{\"name\": \"p8_kpi_cust_clv\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1540, \"y\": 20, \"z\": 100, \"width\": 355, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Estimated CLV\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Estimated CLV\"}, \"Name\": \"_Measures.Estimated CLV\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Projected Lifetime Value'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 150,
+          "z": 100,
+          "width": 1875,
+          "height": 230,
+          "config": "{\"name\": \"p8_table_cust_profile\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 150, \"z\": 100, \"width\": 1875, \"height\": 230}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dw DimCustomer.CustomerID\"}, {\"queryRef\": \"dw DimCustomer.CustomerName\"}, {\"queryRef\": \"dw DimCustomer.Email\"}, {\"queryRef\": \"dw DimCustomer.Gender\"}, {\"queryRef\": \"dw DimCustomer.Age\"}, {\"queryRef\": \"dw DimCustomer.City\"}, {\"queryRef\": \"dw DimCustomer.Country\"}, {\"queryRef\": \"dw DimCustomer.Region\"}, {\"queryRef\": \"dw DimCustomer.AcquisitionChannel\"}, {\"queryRef\": \"dw DimCustomer.SignupDate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"src_0\", \"Entity\": \"dw DimCustomer\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"CustomerID\"}, \"Name\": \"dw DimCustomer.CustomerID\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"CustomerName\"}, \"Name\": \"dw DimCustomer.CustomerName\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Email\"}, \"Name\": \"dw DimCustomer.Email\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Gender\"}, \"Name\": \"dw DimCustomer.Gender\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Age\"}, \"Name\": \"dw DimCustomer.Age\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"City\"}, \"Name\": \"dw DimCustomer.City\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Country\"}, \"Name\": \"dw DimCustomer.Country\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Region\"}, \"Name\": \"dw DimCustomer.Region\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"AcquisitionChannel\"}, \"Name\": \"dw DimCustomer.AcquisitionChannel\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"SignupDate\"}, \"Name\": \"dw DimCustomer.SignupDate\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Master Profile Badges'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 400,
+          "z": 100,
+          "width": 1875,
+          "height": 650,
+          "config": "{\"name\": \"p8_table_cust_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 400, \"z\": 100, \"width\": 1875, \"height\": 650}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dw FactSales.OrderID\"}, {\"queryRef\": \"dw DimProduct.ProductName\"}, {\"queryRef\": \"dw DimCategory.CategoryName\"}, {\"queryRef\": \"dw DimDate.FullDate\"}, {\"queryRef\": \"dw FactSales.Quantity\"}, {\"queryRef\": \"dw FactSales.UnitPrice\"}, {\"queryRef\": \"dw FactSales.DiscountAmount\"}, {\"queryRef\": \"dw FactSales.SalesAmount\"}, {\"queryRef\": \"dw FactSales.ProfitAmount\"}, {\"queryRef\": \"dw FactSales.OrderStatus\"}, {\"queryRef\": \"dw FactSales.ShippingMethod\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"src_0\", \"Entity\": \"dw FactSales\", \"Type\": 0}, {\"Name\": \"src_1\", \"Entity\": \"dw DimProduct\", \"Type\": 0}, {\"Name\": \"src_2\", \"Entity\": \"dw DimCategory\", \"Type\": 0}, {\"Name\": \"src_3\", \"Entity\": \"dw DimDate\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"OrderID\"}, \"Name\": \"dw FactSales.OrderID\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_1\"}}, \"Property\": \"ProductName\"}, \"Name\": \"dw DimProduct.ProductName\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_2\"}}, \"Property\": \"CategoryName\"}, \"Name\": \"dw DimCategory.CategoryName\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_3\"}}, \"Property\": \"FullDate\"}, \"Name\": \"dw DimDate.FullDate\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"Quantity\"}, \"Name\": \"dw FactSales.Quantity\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"UnitPrice\"}, \"Name\": \"dw FactSales.UnitPrice\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"DiscountAmount\"}, \"Name\": \"dw FactSales.DiscountAmount\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"SalesAmount\"}, \"Name\": \"dw FactSales.SalesAmount\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"ProfitAmount\"}, \"Name\": \"dw FactSales.ProfitAmount\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"OrderStatus\"}, \"Name\": \"dw FactSales.OrderStatus\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"src_0\"}}, \"Property\": \"ShippingMethod\"}, \"Name\": \"dw FactSales.ShippingMethod\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer Chronological Transaction History'\"}}}, \"showTitle\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}"
+        }
+      ]
+    }
+  ]
+}

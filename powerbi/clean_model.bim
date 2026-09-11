@@ -1,0 +1,2119 @@
+{
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-IN",
+    "tables": [
+      {
+        "name": "dw DimCategory",
+        "lineageTag": "ca979bf9-cfbe-4ad2-b5dc-c73df88aa25f",
+        "columns": [
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "sourceColumn": "CategoryID",
+            "formatString": "0",
+            "lineageTag": "22461724-3ebf-42a1-a851-3665ce541bbc",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CategoryName",
+            "dataType": "string",
+            "sourceColumn": "CategoryName",
+            "lineageTag": "e6e77878-46a6-4212-a055-3d118bf55db8",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "lineageTag": "5d2783b6-7462-4d72-afef-06178ce5a45d",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimCategory",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:38.456667",
+            "refreshedTime": "2026-09-11T11:34:38.456667",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimCategory\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.83"
+          }
+        ]
+      },
+      {
+        "name": "dw DimCustomer",
+        "lineageTag": "89d75699-e26d-4d54-a4a4-f5d997e26ef6",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "formatString": "0",
+            "lineageTag": "6c07154e-cb1b-49f6-8195-542722031d32",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "CustomerID",
+            "formatString": "0",
+            "lineageTag": "02c5838a-a6af-4b7b-8135-90b837b3297c",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "sourceColumn": "CustomerName",
+            "lineageTag": "0fab8eac-238b-4763-ad29-277675431d3f",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "lineageTag": "a3c1cd8a-6a9f-4ef6-90a9-566812453a32",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "formatString": "0",
+            "lineageTag": "c93fee0f-649c-4387-a647-0826ad73597a",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "SignupDate",
+            "dataType": "dateTime",
+            "sourceColumn": "SignupDate",
+            "formatString": "Long Date",
+            "lineageTag": "5c166e44-da41-4eef-82ac-ade88dec538d",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "81126fc5-db73-414f-9811-a551c6d2182b",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_736f8d21-41d2-49b3-af8a-5ed54e3af980",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "lineageTag": "562b6d8a-d1a8-4a36-993d-51046ba4531b",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "lineageTag": "4003f8f0-6fb4-4734-924d-839bac90555c",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "lineageTag": "62176a50-3403-47a1-bfd0-7455776b0f30",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "aef309a5-c899-4907-b7e2-9e2f657067f3",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "lineageTag": "10586211-2fb2-4ab9-a792-c9ac2e49beb6",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "AcquisitionChannel",
+            "dataType": "string",
+            "sourceColumn": "AcquisitionChannel",
+            "lineageTag": "8cfaaf35-d6de-4d8b-b1f2-53f8d43262be",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "lineageTag": "b9d83f3f-a55d-4e64-b589-947bd26afbac",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "eba3e1d9-91d7-40c7-b55b-43674a8bb045",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_5fd3b8bc-b10b-497a-bb9d-16ccc39a64cf",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimCustomer",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:41.533333",
+            "refreshedTime": "2026-09-11T11:34:41.533333",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimCustomer\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.83"
+          }
+        ]
+      },
+      {
+        "name": "dw DimDate",
+        "lineageTag": "02d196a6-a083-45f4-a988-de2de9683a61",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "formatString": "0",
+            "lineageTag": "6af9308b-ea25-4148-98e6-75e645b4a979",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "FullDate",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "FullDate",
+            "formatString": "Long Date",
+            "lineageTag": "3c09566a-9445-4fa6-a2f5-6413ea6e76b1",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "e47a9831-3e0e-4304-be13-4effb3b60bfb",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_fc9c5f7f-d44f-4e9a-a7e9-c95004e74798",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "formatString": "0",
+            "lineageTag": "d107f23e-622b-47fb-85ca-2217410911c8",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Quarter",
+            "formatString": "0",
+            "lineageTag": "6bcacc1d-90e6-40bd-aaf2-c994fd6abcbf",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "QuarterName",
+            "dataType": "string",
+            "sourceColumn": "QuarterName",
+            "lineageTag": "c4dc2f23-8f06-42b9-ab4b-3cd469ce2358",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "sourceColumn": "Month",
+            "formatString": "0",
+            "lineageTag": "c317074b-7d5d-49bd-bf23-574c5cba3993",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "lineageTag": "39c2957d-e076-4649-9416-a7f7c1b077c8",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "DayOfMonth",
+            "dataType": "int64",
+            "sourceColumn": "DayOfMonth",
+            "formatString": "0",
+            "lineageTag": "a9046446-0c49-4544-98e1-739a1c5aefba",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "formatString": "0",
+            "lineageTag": "a2aaf60c-bd60-4a66-b96b-155ce677eaf9",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName",
+            "lineageTag": "1401cb72-27ab-40b6-8022-b7e92c0e65c2",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "IsWeekend",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekend",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "d03231cc-2eed-4863-a1a9-4cd66a850f9f",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "IsHolidaySeason",
+            "dataType": "boolean",
+            "sourceColumn": "IsHolidaySeason",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "9e5ca3c1-9cca-4fa3-9303-390ae61446e5",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "int64",
+            "sourceColumn": "FiscalYear",
+            "formatString": "0",
+            "lineageTag": "8accf7e0-ecc6-42b6-8bb9-250912e745f3",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "FiscalQuarter",
+            "dataType": "string",
+            "sourceColumn": "FiscalQuarter",
+            "lineageTag": "b8a6daeb-75bb-4baf-9594-9ba1530c1c8a",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimDate",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:38.503333",
+            "refreshedTime": "2026-09-11T11:34:38.503333",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimDate\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.83"
+          }
+        ]
+      },
+      {
+        "name": "dw DimLocation",
+        "lineageTag": "9fb89186-9e88-4b9a-9778-ad51b5ea9214",
+        "columns": [
+          {
+            "name": "LocationKey",
+            "dataType": "int64",
+            "sourceColumn": "LocationKey",
+            "formatString": "0",
+            "lineageTag": "0ca84ba8-10f7-4395-b473-4b03ad8f4425",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "lineageTag": "7aa2ec54-4162-4c73-b04f-1b40728d3d51",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "lineageTag": "89cb7b1b-8518-4c12-a0e7-11710a82d8a0",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "8d916f43-729f-4c04-8295-fbcba5fba159",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "lineageTag": "8ae535de-261c-4322-bbda-ed106b5f3ad0",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimLocation",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:45.233333",
+            "refreshedTime": "2026-09-11T11:34:45.233333",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimLocation\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.83"
+          }
+        ]
+      },
+      {
+        "name": "dw DimPayment",
+        "lineageTag": "4744f932-0f2c-47f4-9943-2a4b540ce86e",
+        "columns": [
+          {
+            "name": "PaymentKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentKey",
+            "formatString": "0",
+            "lineageTag": "fb492d36-8ded-4544-876e-b5105888cadf",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "PaymentMethod",
+            "dataType": "string",
+            "sourceColumn": "PaymentMethod",
+            "lineageTag": "87de0548-9df9-4e65-88f2-46973b9b4753",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimPayment",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:45.213333",
+            "refreshedTime": "2026-09-11T11:34:45.213333",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimPayment\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.83"
+          }
+        ]
+      },
+      {
+        "name": "dw DimProduct",
+        "lineageTag": "b6c034f0-1636-427b-aa48-c7d70c5f5c53",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "formatString": "0",
+            "lineageTag": "c47d25d9-1b08-4273-842b-b80e3d1be4f5",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "sourceColumn": "ProductID",
+            "formatString": "0",
+            "lineageTag": "2e837815-522f-46e8-a03b-ae0b178dd88b",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "ProductName",
+            "dataType": "string",
+            "sourceColumn": "ProductName",
+            "lineageTag": "3714b31c-8e29-4041-bb14-2c4374157b98",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand",
+            "lineageTag": "38ca6682-0cd0-4dc0-b3f9-6efc5625b596",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "sourceColumn": "CategoryID",
+            "formatString": "0",
+            "lineageTag": "0e4386c8-fbb1-40a2-a918-0413f03ae064",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "CategoryName",
+            "dataType": "string",
+            "sourceColumn": "CategoryName",
+            "lineageTag": "ecbd9f6f-4ad2-4000-a53b-61c7ad81f9f3",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "UnitCost",
+            "dataType": "double",
+            "sourceColumn": "UnitCost",
+            "lineageTag": "45f57bc2-481b-452c-bcd1-181d589306dc",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "lineageTag": "81286ebd-25b5-4bf4-ab8a-9cac672cdd10",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.83"
+              }
+            ]
+          },
+          {
+            "name": "ProductLaunchDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ProductLaunchDate",
+            "formatString": "Long Date",
+            "lineageTag": "433d310c-b521-42d8-8379-6ed2fa6f8a0d",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "2beb37ae-e658-491f-a84f-d44c81b95b1f",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_3488b7c8-b970-4b82-8d68-ea4b367104ef",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "lineageTag": "3be75baf-81b5-4448-b622-88cea111f385",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "62365400-bcd9-4a6c-9d1a-359aa4d5f4b7",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_bf817eb4-e9f9-4ed8-b8ef-c4a87aa1c61a",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw DimProduct",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:38.576667",
+            "refreshedTime": "2026-09-11T11:34:38.576667",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"DimProduct\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.836667"
+          }
+        ]
+      },
+      {
+        "name": "dw FactReturns",
+        "lineageTag": "72cd5194-1e92-4cc4-93a7-563050cde6ca",
+        "columns": [
+          {
+            "name": "ReturnKey",
+            "dataType": "int64",
+            "sourceColumn": "ReturnKey",
+            "formatString": "0",
+            "lineageTag": "a90c3ace-3df5-4c59-a36f-4684caac93d5",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ReturnID",
+            "dataType": "int64",
+            "sourceColumn": "ReturnID",
+            "formatString": "0",
+            "lineageTag": "be62e579-969b-47b2-925c-d4f23026b015",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "sourceColumn": "OrderID",
+            "formatString": "0",
+            "lineageTag": "91ebf801-3e17-4060-b139-505d0cbf1cd4",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "formatString": "0",
+            "lineageTag": "a567ab2c-0cf2-4507-8cec-7f7acf63b41d",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "formatString": "0",
+            "lineageTag": "5b7434c7-7f01-4b9f-ad17-a0949e857635",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ReturnDateKey",
+            "dataType": "int64",
+            "sourceColumn": "ReturnDateKey",
+            "formatString": "0",
+            "lineageTag": "6d8efdaa-3e67-4401-868a-d6399c4433ab",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "QuantityReturned",
+            "dataType": "int64",
+            "sourceColumn": "QuantityReturned",
+            "formatString": "0",
+            "lineageTag": "5752c6d0-e16c-4a54-ad00-01fe7cf1fda8",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ReturnAmount",
+            "dataType": "double",
+            "sourceColumn": "ReturnAmount",
+            "lineageTag": "f6ed4871-2422-41a2-9fad-9e6766eb611c",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ReturnReason",
+            "dataType": "string",
+            "sourceColumn": "ReturnReason",
+            "lineageTag": "747512ca-2af3-42b9-879d-52c967faffc5",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "lineageTag": "8cc7485d-a6ba-4480-8f67-66da6445fdeb",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "5889068b-7fc6-4a42-978f-0ece2cf8dda1",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_0ab3c29b-e4ed-4718-99dc-86ff24bb8d82",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw FactReturns",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:34:43.276667",
+            "refreshedTime": "2026-09-11T11:34:43.276667",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"FactReturns\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.836667"
+          }
+        ]
+      },
+      {
+        "name": "dw FactSales",
+        "lineageTag": "87d9bae7-0caf-44b5-aeee-fe1590b2094b",
+        "columns": [
+          {
+            "name": "SalesKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesKey",
+            "formatString": "0",
+            "lineageTag": "d4ca8928-a358-4d6b-befd-2b7ce1f73ec1",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "SalesID",
+            "dataType": "int64",
+            "sourceColumn": "SalesID",
+            "formatString": "0",
+            "lineageTag": "d16678d5-87e7-404b-838b-6d043674d917",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "sourceColumn": "OrderID",
+            "formatString": "0",
+            "lineageTag": "ad5ec68d-e0d9-4640-a912-82889165d545",
+            "summarizeBy": "count",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "formatString": "0",
+            "lineageTag": "1b9c00f2-7639-46de-bded-3b605497def4",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "formatString": "0",
+            "lineageTag": "1825e9e0-9541-41b7-81fe-9b746fb95575",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "sourceColumn": "OrderDateKey",
+            "formatString": "0",
+            "lineageTag": "9654cddc-6014-43e1-9501-00b3b5bfb989",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "LocationKey",
+            "dataType": "int64",
+            "sourceColumn": "LocationKey",
+            "formatString": "0",
+            "lineageTag": "2b46f73a-ce52-414f-bb5a-db31a469f34a",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "PaymentKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentKey",
+            "formatString": "0",
+            "lineageTag": "f78440cf-68d4-4492-8007-20bbef755b00",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "OrderStatus",
+            "dataType": "string",
+            "sourceColumn": "OrderStatus",
+            "lineageTag": "6ec52081-3493-4665-9154-02b85b4cdbbb",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ShippingMethod",
+            "dataType": "string",
+            "sourceColumn": "ShippingMethod",
+            "lineageTag": "45467ef8-1730-49da-a3c7-06268e68553b",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity",
+            "formatString": "0",
+            "lineageTag": "242da448-9c00-4327-a434-6c18ff251fc5",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "lineageTag": "356dc2e4-26af-4f94-b755-751e1fec88a1",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "DiscountAmount",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmount",
+            "lineageTag": "f2159fe3-efed-4d78-8b87-5d38c073efe4",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "double",
+            "sourceColumn": "SalesAmount",
+            "lineageTag": "2b4894e3-40a1-4769-9d36-1c0a1ec53e78",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CostAmount",
+            "dataType": "double",
+            "sourceColumn": "CostAmount",
+            "lineageTag": "2845e8e7-58fd-4f5a-9f22-40105edaf667",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "ProfitAmount",
+            "dataType": "double",
+            "sourceColumn": "ProfitAmount",
+            "lineageTag": "642516a8-7240-4216-9b50-692755960cfa",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "lineageTag": "7ca10bc8-cc66-4b1b-8fdb-607230bdda02",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "variations": [
+              {
+                "name": "Variation",
+                "relationship": "f99d064b-7dba-4536-b64c-587790760356",
+                "defaultHierarchy": {
+                  "table": "LocalDateTable_3e0bf00c-c5f1-47b2-bb8a-56c32bd86f99",
+                  "hierarchy": "Date Hierarchy"
+                },
+                "isDefault": true
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic",
+                "modifiedTime": "2026-09-11T11:34:36.836667"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dw FactSales",
+            "mode": "import",
+            "state": "ready",
+            "modifiedTime": "2026-09-11T11:38:38.29",
+            "refreshedTime": "2026-09-11T11:38:38.29",
+            "source": {
+              "type": "m",
+              "expression": "let\n  Source = Sql.Database(\"localhost\", \"VeyraDW\"),\n  #\"Navigation 1\" = Source{[Schema = \"dw\", Item = \"FactSales\"]}[Data]\nin\n  #\"Navigation 1\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table",
+            "modifiedTime": "2026-09-11T11:34:36.836667"
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Description",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isHidden": true,
+            "sourceColumn": "[Description]",
+            "state": "calculationNeeded",
+            "attributeHierarchy": {}
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures Partition",
+            "state": "calculationNeeded",
+            "modifiedTime": "2026-09-11T12:20:17.293333",
+            "refreshedTime": "1699-12-31T00:00:00",
+            "source": {
+              "type": "calculated",
+              "expression": "ROW(\"Description\", \"Veyra E-Commerce KPI Measures Container\")"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Revenue",
+            "expression": "VAR Result = SUM('dw FactSales'[SalesAmount]) RETURN COALESCE(Result, 0)",
+            "formatString": "\\$#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Profit",
+            "expression": "VAR Result = SUM('dw FactSales'[ProfitAmount]) RETURN COALESCE(Result, 0)",
+            "formatString": "\\$#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Cost",
+            "expression": "VAR Result = SUM('dw FactSales'[CostAmount]) RETURN COALESCE(Result, 0)",
+            "formatString": "\\$#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Profit Margin",
+            "expression": "VAR Revenue = [Total Revenue] VAR Profit = [Total Profit] VAR Result = DIVIDE(Profit, Revenue, 0) RETURN Result",
+            "formatString": "0.0%",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Orders",
+            "expression": "VAR Result = DISTINCTCOUNT('dw FactSales'[OrderID]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Quantity",
+            "expression": "VAR Result = SUM('dw FactSales'[Quantity]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Average Order Value",
+            "expression": "VAR Revenue = [Total Revenue] VAR Orders = [Total Orders] VAR Result = DIVIDE(Revenue, Orders, 0) RETURN Result",
+            "formatString": "\\$#,0.00",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Discounts",
+            "expression": "VAR Result = SUM('dw FactSales'[DiscountAmount]) RETURN COALESCE(Result, 0)",
+            "formatString": "\\$#,0",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Discount Rate %",
+            "expression": "VAR TotalDisc = [Total Discounts] VAR GrossRev = [Total Revenue] + TotalDisc VAR Result = DIVIDE(TotalDisc, GrossRev, 0) RETURN Result",
+            "formatString": "0.0%",
+            "displayFolder": "1. Financial & Sales",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Prior Month Revenue",
+            "expression": "VAR Result = CALCULATE([Total Revenue], DATEADD('dw DimDate'[FullDate], -1, MONTH)) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "MoM Revenue %",
+            "expression": "VAR CurrentRevenue = [Total Revenue] VAR PriorRevenue = [Prior Month Revenue] VAR Result = DIVIDE(CurrentRevenue - PriorRevenue, PriorRevenue, 0) RETURN Result",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Prior Year Revenue",
+            "expression": "VAR Result = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('dw DimDate'[FullDate])) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "YoY Revenue %",
+            "expression": "VAR CurrentRevenue = [Total Revenue] VAR PriorRevenue = [Prior Year Revenue] VAR Result = DIVIDE(CurrentRevenue - PriorRevenue, PriorRevenue, 0) RETURN Result",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "YTD Revenue",
+            "expression": "VAR Result = TOTALYTD([Total Revenue], 'dw DimDate'[FullDate]) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "YTD Profit",
+            "expression": "VAR Result = TOTALYTD([Total Profit], 'dw DimDate'[FullDate]) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Rolling 3M Revenue",
+            "expression": "VAR Result = CALCULATE([Total Revenue], DATESINPERIOD('dw DimDate'[FullDate], MAX('dw DimDate'[FullDate]), -3, MONTH)) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Rolling 12M Revenue",
+            "expression": "VAR Result = CALCULATE([Total Revenue], DATESINPERIOD('dw DimDate'[FullDate], MAX('dw DimDate'[FullDate]), -12, MONTH)) RETURN Result",
+            "formatString": "\\$#,0",
+            "displayFolder": "2. Time Intelligence",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Customers",
+            "expression": "VAR Result = DISTINCTCOUNT('dw DimCustomer'[CustomerKey]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Active Purchasing Customers",
+            "expression": "VAR Result = CALCULATE(DISTINCTCOUNT('dw FactSales'[CustomerKey]), 'dw FactSales'[SalesAmount] > 0) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Repeat Customers",
+            "expression": "VAR Result = COUNTROWS(FILTER(VALUES('dw DimCustomer'[CustomerKey]), CALCULATE(DISTINCTCOUNT('dw FactSales'[OrderID])) > 1)) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "One-Time Buyers",
+            "expression": "VAR Result = COUNTROWS(FILTER(VALUES('dw DimCustomer'[CustomerKey]), CALCULATE(DISTINCTCOUNT('dw FactSales'[OrderID])) = 1)) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Repeat Customer Rate",
+            "expression": "VAR RepeatCust = [Repeat Customers] VAR TotalActive = [Active Purchasing Customers] VAR Result = DIVIDE(RepeatCust, TotalActive, 0) RETURN Result",
+            "formatString": "0.0%",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Average Revenue Per Customer",
+            "expression": "VAR Revenue = [Total Revenue] VAR Customers = [Active Purchasing Customers] VAR Result = DIVIDE(Revenue, Customers, 0) RETURN Result",
+            "formatString": "\\$#,0.00",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Estimated CLV",
+            "expression": "VAR AvgAOV = [Average Order Value] VAR CustOrders = [Total Orders] VAR MarginRate = [Profit Margin] VAR ActiveCust = [Active Purchasing Customers] VAR AnnualOrdersPerCust = DIVIDE(CustOrders, ActiveCust * 4, 0) VAR FutureHorizonMultiplier = 2.125 VAR ProjectedMargin = AnnualOrdersPerCust * AvgAOV * MarginRate * FutureHorizonMultiplier VAR HistoricalProfitPerCust = DIVIDE([Total Profit], ActiveCust, 0) RETURN HistoricalProfitPerCust + ProjectedMargin",
+            "formatString": "\\$#,0.00",
+            "displayFolder": "3. Customer & Retention",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Active Catalog Products",
+            "expression": "VAR Result = DISTINCTCOUNT('dw DimProduct'[ProductKey]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "4. Products & Merchandising",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Average Selling Price",
+            "expression": "VAR Result = DIVIDE([Total Revenue], [Total Quantity], 0) RETURN Result",
+            "formatString": "\\$#,0.00",
+            "displayFolder": "4. Products & Merchandising",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Average Unit Cost",
+            "expression": "VAR Result = DIVIDE([Total Cost], [Total Quantity], 0) RETURN Result",
+            "formatString": "\\$#,0.00",
+            "displayFolder": "4. Products & Merchandising",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Returned Items",
+            "expression": "VAR Result = SUM('dw FactReturns'[QuantityReturned]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "5. Returns & Quality",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Return Amount",
+            "expression": "VAR Result = SUM('dw FactReturns'[ReturnAmount]) RETURN COALESCE(Result, 0)",
+            "formatString": "\\$#,0",
+            "displayFolder": "5. Returns & Quality",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Total Return Incidents",
+            "expression": "VAR Result = DISTINCTCOUNT('dw FactReturns'[ReturnID]) RETURN COALESCE(Result, 0)",
+            "formatString": "#,0",
+            "displayFolder": "5. Returns & Quality",
+            "dataType": "int64",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          },
+          {
+            "name": "Return Rate",
+            "expression": "VAR ReturnedUnits = [Total Returned Items] VAR TotalUnits = [Total Quantity] VAR Result = DIVIDE(ReturnedUnits, TotalUnits, 0) RETURN Result",
+            "formatString": "0.0%",
+            "displayFolder": "5. Returns & Quality",
+            "dataType": "double",
+            "modifiedTime": "2026-09-11T12:21:00.616667",
+            "structureModifiedTime": "2026-09-11T12:21:00.5"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "caaf376b-42a5-403f-b70b-4074faf1a8c2",
+        "fromTable": "dw DimProduct",
+        "fromColumn": "CategoryID",
+        "toTable": "dw DimCategory",
+        "toColumn": "CategoryID",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "094a1f26-acad-446b-b858-8b8e267643d5",
+        "fromTable": "dw FactReturns",
+        "fromColumn": "CustomerKey",
+        "toTable": "dw DimCustomer",
+        "toColumn": "CustomerKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "57e74d12-881c-44fc-896e-bd2aa97e4be6",
+        "fromTable": "dw FactReturns",
+        "fromColumn": "ReturnDateKey",
+        "toTable": "dw DimDate",
+        "toColumn": "DateKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "17488069-2511-4fc8-b966-bdf6651696ea",
+        "fromTable": "dw FactReturns",
+        "fromColumn": "ProductKey",
+        "toTable": "dw DimProduct",
+        "toColumn": "ProductKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "f1ff92ae-0bdd-4569-b5fa-f3646453f600",
+        "fromTable": "dw FactSales",
+        "fromColumn": "CustomerKey",
+        "toTable": "dw DimCustomer",
+        "toColumn": "CustomerKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "1f58f8ae-91d1-416a-a892-5b99cb9ae71f",
+        "fromTable": "dw FactSales",
+        "fromColumn": "OrderDateKey",
+        "toTable": "dw DimDate",
+        "toColumn": "DateKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "4ab6d315-0285-411f-88a4-4737c6807207",
+        "fromTable": "dw FactSales",
+        "fromColumn": "LocationKey",
+        "toTable": "dw DimLocation",
+        "toColumn": "LocationKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "b1681ebb-a601-4d98-b9b6-20a80dd5a6ee",
+        "fromTable": "dw FactSales",
+        "fromColumn": "PaymentKey",
+        "toTable": "dw DimPayment",
+        "toColumn": "PaymentKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      },
+      {
+        "name": "1d1b70df-add3-47c9-8aca-c602e15f0f4e",
+        "fromTable": "dw FactSales",
+        "fromColumn": "ProductKey",
+        "toTable": "dw DimProduct",
+        "toColumn": "ProductKey",
+        "state": "ready",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS",
+            "modifiedTime": "2026-09-11T11:38:40.226667"
+          }
+        ]
+      }
+    ],
+    "cultures": [
+      {
+        "name": "en-US",
+        "modifiedTime": "2026-09-11T11:25:47.423333",
+        "structureModifiedTime": "2026-09-11T11:25:47.423333"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1",
+        "modifiedTime": "2026-09-11T11:25:47.423333"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"dw DimCategory\",\"dw DimCustomer\",\"dw DimDate\",\"dw DimLocation\",\"dw DimPayment\",\"dw DimProduct\",\"dw FactReturns\",\"dw FactSales\"]",
+        "modifiedTime": "2026-09-11T11:34:36.83"
+      }
+    ]
+  }
+}
