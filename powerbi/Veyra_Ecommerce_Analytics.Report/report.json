@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "config": "{\"version\": \"5.50\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Veyra Executive Dark Theme\", \"reportVersionAtImport\": \"5.50\", \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"exportDataMode\": 1}}",
+  "config": "{\"version\": \"5.50\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Veyra Liquid Glass Theme\", \"reportVersionAtImport\": \"5.50\", \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"exportDataMode\": 1}}",
   "layoutOptimization": 0,
   "resourcePackages": [
     {
@@ -11,6 +11,11 @@
             "name": "veyra_theme",
             "path": "StaticResources/RegisteredResources/veyra_theme.json",
             "type": 2
+          },
+          {
+            "name": "liquid_glass_wallpaper",
+            "path": "StaticResources/RegisteredResources/liquid_glass_wallpaper.jpg",
+            "type": 1
           }
         ],
         "name": "RegisteredResources",
