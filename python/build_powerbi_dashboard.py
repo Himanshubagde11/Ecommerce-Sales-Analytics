@@ -194,7 +194,7 @@ def create_treemap(name, x, y, width, height, title, cat_table, cat_col, val_mea
         "singleVisual": {
             "visualType": "treemap",
             "projections": {
-                "Category": [{"queryRef": f"{cat_table}.{cat_col}", "active": True}],
+                "Group": [{"queryRef": f"{cat_table}.{cat_col}", "active": True}],
                 "Values": [{"queryRef": f"_Measures.{val_measure}"}]
             },
             "prototypeQuery": {

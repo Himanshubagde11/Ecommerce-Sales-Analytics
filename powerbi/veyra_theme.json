@@ -211,6 +211,34 @@
           }
         ]
       }
+    },
+    "treemap": {
+      "*": {
+        "labels": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#00F2FE"
+              }
+            },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI Bold"
+          }
+        ]
+      }
     }
   }
 }
